@@ -176,8 +176,8 @@ colors:
 
   # Default colors
   primary:
-    background: '0x32302f'
-    foreground: '0xd4be98'
+    background: '#32302f'
+    foreground: '#d4be98'
 
   # Cursor colors
   #
