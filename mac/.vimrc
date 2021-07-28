@@ -65,6 +65,10 @@ set noswapfile
 " Don't redraw while executing macros
 set lazyredraw
 
+" Unbind Ex mode, rebind macro
+nnoremap Q q
+nnoremap q <Nop>
+
 " Fix arrow keys with tmux
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
