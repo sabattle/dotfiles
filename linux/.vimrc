@@ -1,5 +1,27 @@
+" -----------------------------------------------------------------------------
+" Vundle
+" -----------------------------------------------------------------------------
+
 " Turn off Vi compatibility mode
-set nocompatible
+set nocompatible " be iMproved, required
+filetype off     " required
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins list:
+Plugin 'hashivim/vim-terraform'
+
+call vundle#end()         " required
+filetype plugin indent on " required
+
+" -----------------------------------------------------------------------------
+" Vim Settings
+" -----------------------------------------------------------------------------
 
 " Enable syntax highlighting
 syntax on
@@ -25,7 +47,7 @@ let &t_EI.="\e[1 q" " EI = NORMAL mode (ELSE)
 set number
 set ruler
 
-" Always show commands
+" Always show mode
 set showmode
 
 " Turn on the Wild menu
@@ -46,7 +68,6 @@ set nowrap
 set ve+=onemore
 
 " Set tabs to 4 spaces
-filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -78,9 +99,11 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
-" File type configurations
+" -----------------------------------------------------------------------------
+" Filetype Configurations
+" -----------------------------------------------------------------------------
 
-" 2 space tabs | HTML, JS, .gitconfig
+" 2 space tabs | .html, .js, .gitconfig
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype gitconfig setlocal ts=2 sw=2 expandtab

@@ -104,6 +104,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias alacrittyconfig="vim ~/.alacritty.yml"
 alias tmuxconfig="vim ~/.tmux.conf"
+alias tf='terraform'
 
 bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
