@@ -30,6 +30,9 @@ create_symlinks() {
 	# .vimrc
 	rm -f ~/.vimrc && ln -s $SCRIPTPATH/.vimrc ~/.vimrc
 
+    # .gitconfig
+    rm -f ~/.gitconfig && ln -s $SCRIPTPATH/.gitconfig ~/.gitconfig
+
     # karabiner.json
     mkdir -p ~/.config/karabiner
     rm -f ~/.config/karabiner/karabiner.json && ln -s $SCRIPTPATH/karabiner.json ~/.config/karabiner/karabiner.json

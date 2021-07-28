@@ -29,6 +29,9 @@ create_symlinks() {
 
 	# .vimrc
 	rm -f ~/.vimrc && ln -s $SCRIPTPATH/.vimrc ~/.vimrc
+
+    # .gitconfig
+    rm -f ~/.gitconfig && ln -s $SCRIPTPATH/.gitconfig ~/.gitconfig
 }
 
 main

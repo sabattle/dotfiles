@@ -1,0 +1,29 @@
+# Git Config
+
+[user]
+  name = Sebastian Battle
+  email = sabattle@eckerd.edu
+
+[color]
+  ui = auto
+
+[color "diff"]
+  meta = white bold
+  frag = cyan bold
+  old = red bold
+  new = green bold
+
+[core]
+  editor = vim
+
+[alias]
+  a = add
+  b = branch
+  c = commit -m # Commit with message
+  s = status -sb # Short status with current branch
+  d = diff
+  co = checkout
+  l = log
+
+  # Ignore multiple gits, for example "git git status"
+  git = !git

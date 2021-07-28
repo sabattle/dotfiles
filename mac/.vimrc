@@ -83,3 +83,10 @@ nnoremap <A-Right> w
 nnoremap <A-Left> b
 imap <A-Right> <C-o>w
 imap <A-Left> <C-o>b
+
+" File type configurations
+
+" 2 space tabs | HTML, JS, .gitconfig
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+autocmd Filetype gitconfig setlocal ts=2 sw=2 expandtab

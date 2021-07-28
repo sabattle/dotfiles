@@ -77,3 +77,10 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+" File type configurations
+
+" 2 space tabs | HTML, JS, .gitconfig
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+autocmd Filetype gitconfig setlocal ts=2 sw=2 expandtabletype
