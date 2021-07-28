@@ -1,5 +1,75 @@
+" Turn off Vi compatibility mode
+set nocompatible
+
+" Enable syntax highlighting
 syntax on
+
+" Enable mouse mode
+set mouse=a
+
+" Change cursor types
+let &t_SI.="\e[5 q" " SI = INSERT mode
+let &t_SR.="\e[3 q" " SR = REPLACE mode
+let &t_EI.="\e[1 q" " EI = NORMAL mode (ELSE)
+
+" Cursor settings:
+
+" 1 -> blinking block
+" 2 -> solid block
+" 3 -> blinking underscore
+" 4 -> solid underscore
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
+
+" Enable line numbers
 set number
 set ruler
+
+" Always show commands
+set showmode
+
+" Turn on the Wild menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+     set wildignore+=.git\*,.hg\*,.svn\*
+else
+     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+" Disable line wrapping
+set nowrap
+
+" Move cursor to the end of the line
 set ve+=onemore
-set ts=4 sw=4
+
+" Set tabs to 4 spaces
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+" Searching options
+set ignorecase
+set incsearch
+set hlsearch
+
+" Disable backups
+set nobackup
+set nowb
+set noswapfile
+
+" Don't redraw while executing macros
+set lazyredraw
+
+" Fix arrow keys with tmux
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif

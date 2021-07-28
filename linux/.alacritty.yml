@@ -27,7 +27,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux"
+    - "tmux attach || tmux"
 
 window:
   # Window dimensions (changes require restart)

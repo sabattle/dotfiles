@@ -69,7 +69,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    kubectl
+)
 
 ZSH_DISABLE_COMPFIX="true"
 
@@ -107,5 +110,7 @@ alias tf='terraform'
 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-bindkey -r "^S" history-incremntal-search-forward
+bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
+
+export PATH="$HOME/.poetry/bin:$PATH"
