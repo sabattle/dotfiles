@@ -17,7 +17,7 @@ DOTFILES_DIR=$SCRIPT_PATH/$OS
 main() {
 
     echo "Current OS: $OS"
-	echo "Installing..."
+	echo "Beginning installation..."
 
     install_oh_my_zsh
     install_zsh_plugins
@@ -31,10 +31,12 @@ main() {
 # Install Oh My Zsh
 install_oh_my_zsh() {
 
-    echo "Installing Oh My Zsh..."
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
+    if [ ! -d ~/.oh-my-zsh ]; then
+        echo "Installing Oh My Zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    else
+        echo "Oh My Zsh already installed, skipping..."
+    fi
 }
 
 # Install Zsh plugins
@@ -43,13 +45,21 @@ install_zsh_plugins() {
     echo "Installing Zsh plugins..."
 
     # zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+            ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    else
+        echo "zsh-syntax-highlighting already installed, skipping..."
+    fi
 
     # zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-}
+    if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+        git clone https://github.com/zsh-users/zsh-autosuggestions \
+            ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    else
+        echo "zsh-autosuggestions already installed, skipping..."
+    fi
+}   
 
 # Symlink all dotfiles
 create_symlinks() {
@@ -81,10 +91,13 @@ create_symlinks() {
 
 # Install Vundle
 install_vundle() {
-
-    echo "Installing Vundle..."
-
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    
+    if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+        echo "Installing Vundle..."
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    else
+        echo "Vundle already installed, skipping..."
+    fi
 }
 
 # Install Vim plugins
