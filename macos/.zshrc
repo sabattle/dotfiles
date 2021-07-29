@@ -72,6 +72,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     kubectl
+    zsh-syntax-highlighting
 )
 
 ZSH_DISABLE_COMPFIX="true"
