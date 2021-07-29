@@ -73,8 +73,11 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     kubectl
+    zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 
 source $ZSH/oh-my-zsh.sh
 
