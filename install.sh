@@ -17,15 +17,15 @@ DOTFILES_DIR=$SCRIPT_PATH/$OS
 main() {
 
     echo "Current OS: $OS"
-	echo "Beginning installation..."
+    echo "Beginning installation..."
 
     install_oh_my_zsh
     install_zsh_plugins
-	create_symlinks
+    create_symlinks
     install_vundle
     install_vim_plugins
 
-	echo "Done"
+    echo "Done"
 }
 
 # Install Oh My Zsh
@@ -64,19 +64,19 @@ install_zsh_plugins() {
 # Symlink all dotfiles
 create_symlinks() {
 
-	echo "Creating symlinks..."
+    echo "Creating symlinks..."
 
-	# .alacritty.yml
-	rm -f ~/.alacritty.yml && ln -s $DOTFILES_DIR/.alacritty.yml ~/.alacritty.yml
+    # .alacritty.yml
+    rm -f ~/.alacritty.yml && ln -s $DOTFILES_DIR/.alacritty.yml ~/.alacritty.yml
 
-	# .zshrc
-	rm -f ~/.zshrc && ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
+    # .zshrc
+    rm -f ~/.zshrc && ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
 
-	# .tmux.conf
-	rm -f ~/.tmux.conf && ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
+    # .tmux.conf
+    rm -f ~/.tmux.conf && ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 
-	# .vimrc
-	rm -f ~/.vimrc && ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
+    # .vimrc
+    rm -f ~/.vimrc && ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
 
     # .gitconfig
     rm -f ~/.gitconfig && ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
@@ -91,7 +91,7 @@ create_symlinks() {
 
 # Install Vundle
 install_vundle() {
-    
+
     if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
         echo "Installing Vundle..."
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
