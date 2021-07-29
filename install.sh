@@ -19,13 +19,36 @@ main() {
     echo "Current OS: $OS"
 	echo "Installing..."
 
-	create_symlinks
     install_oh_my_zsh
     install_zsh_plugins
+	create_symlinks
     install_vundle
     install_vim_plugins
 
 	echo "Done"
+}
+
+# Install Oh My Zsh
+install_oh_my_zsh() {
+
+    echo "Installing Oh My Zsh..."
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+}
+
+# Install Zsh plugins
+install_zsh_plugins() {
+
+    echo "Installing Zsh plugins..."
+
+    # zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+    # zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 # Symlink all dotfiles
@@ -54,29 +77,6 @@ create_symlinks() {
         rm -f ~/.config/karabiner/karabiner.json
         ln -s $DOTFILES_DIR/karabiner.json ~/.config/karabiner/karabiner.json
     fi
-}
-
-# Install Oh My Zsh
-install_oh_my_zsh() {
-
-    echo "Installing Oh My Zsh..."
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-}
-
-# Install Zsh plugins
-install_zsh_plugins() {
-
-    echo "Installing Zsh plugins..."
-    
-    # zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-    # zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 # Install Vundle
