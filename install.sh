@@ -35,7 +35,7 @@ install_oh_my_zsh() {
         echo "Installing Oh My Zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     else
-        echo "Oh My Zsh already installed, skipping..."
+        echo "Oh My Zsh already installed, skipping"
     fi
 }
 
@@ -49,7 +49,7 @@ install_zsh_plugins() {
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
             ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     else
-        echo "zsh-syntax-highlighting already installed, skipping..."
+        echo "zsh-syntax-highlighting already installed, skipping"
     fi
 
     # zsh-autosuggestions
@@ -57,7 +57,7 @@ install_zsh_plugins() {
         git clone https://github.com/zsh-users/zsh-autosuggestions \
             ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     else
-        echo "zsh-autosuggestions already installed, skipping..."
+        echo "zsh-autosuggestions already installed, skipping"
     fi
 }   
 
@@ -96,7 +96,7 @@ install_vundle() {
         echo "Installing Vundle..."
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     else
-        echo "Vundle already installed, skipping..."
+        echo "Vundle already installed, skipping"
     fi
 }
 
@@ -104,7 +104,6 @@ install_vundle() {
 install_vim_plugins() {
 
     echo "Installing Vim plugins..."
-
     vim +PluginInstall +qall
 }
 

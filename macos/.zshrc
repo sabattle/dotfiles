@@ -77,9 +77,14 @@ plugins=(
 )
 
 ZSH_DISABLE_COMPFIX="true"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 
 source $ZSH/oh-my-zsh.sh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line) # Fix paste w/ autosuggest
+ZSH_HIGHLIGHT_STYLES[comment]=fg=248 # Fix comment color
+
+zstyle ':bracketed-paste-magic' active-widgets '.self-*' # Fix slow pasting
 
 # User configuration
 
