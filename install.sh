@@ -83,9 +83,8 @@ create_symlinks() {
 
     # karabiner.json
     if [ $OS == "macos" ]; then
-        mkdir -p ~/.config/karabiner
-        rm -f ~/.config/karabiner/karabiner.json
-        ln -s $DOTFILES_DIR/karabiner.json ~/.config/karabiner/karabiner.json
+        mkdir -p ~/.config
+        rm -rf ~/.config/karabiner && ln -s $DOTFILES_DIR/karabiner ~/.config/karabiner
     fi
 }
 
