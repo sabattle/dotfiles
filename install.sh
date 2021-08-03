@@ -4,9 +4,9 @@
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Get OS
-if [ "$(UNAME)" == "Linux" ]; then
+if [[ "$(uname)" == "Linux" ]]; then
     OS="linux"
-elif [ "$(UNAME)" == "Darwin" ]; then
+elif [[ "$(uname)" == "Darwin" ]]; then
     OS="macos"
 fi
 
@@ -82,7 +82,7 @@ create_symlinks() {
     rm -f ~/.gitconfig && ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
 
     # karabiner.json
-    if [ $OS == "macos" ]; then
+    if [[ "$OS" == "macos" ]]; then
         mkdir -p ~/.config
         rm -rf ~/.config/karabiner && ln -s $DOTFILES_DIR/karabiner ~/.config/karabiner
     fi
