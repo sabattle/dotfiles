@@ -72,6 +72,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    docker
+    docker-compose
     kubectl
     zsh-autosuggestions
     zsh-syntax-highlighting
@@ -113,6 +115,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias alacrittyconfig="vim ~/.alacritty.yml"
 alias tmuxconfig="vim ~/.tmux.conf"
 alias ssh='TERM=xterm-256color \ssh'
+alias open="xdg-open"
 alias tf="terraform"
 
 bindkey -r "^S" history-incremental-search-forward
