@@ -114,7 +114,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias alacrittyconfig="vim ~/.alacritty.yml"
 alias tmuxconfig="vim ~/.tmux.conf"
 alias ssh='TERM=xterm-256color \ssh'
-alias tf='terraform'
+alias tf="terraform"
+alias gr='cd $(git root)'
 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word

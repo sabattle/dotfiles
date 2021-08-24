@@ -27,3 +27,5 @@
 
   # Ignore multiple gits, for example "git git status"
   git = !git
+  
+  root = rev-parse --show-toplevel
