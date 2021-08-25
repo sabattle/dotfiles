@@ -1,9 +1,5 @@
 # Git Config
 
-[user]
-  name = Sebastian Battle
-  email = sabattle@eckerd.edu
-
 [color]
   ui = auto
 
