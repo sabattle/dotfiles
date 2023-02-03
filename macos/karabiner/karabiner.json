@@ -1,8 +1,10 @@
 {
-"global": {
+    "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
+        "show_profile_name_in_menu_bar": false,
+        "unsafe_ui": false
     },
     "profiles": [
         {
@@ -47,13 +49,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -106,13 +108,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_if",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -165,13 +167,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -224,13 +226,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_if",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
@@ -283,13 +285,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -339,13 +341,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -449,7 +451,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^org\\.mozilla\\.firefox$",
                                             "^org\\.mozilla\\.nightly$",
@@ -463,13 +465,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -504,13 +506,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -560,7 +562,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^cz\\.or\\.repo\\.git-gui$",
                                             "^com\\.jetbrains\\."
@@ -568,13 +570,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -627,7 +629,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^org\\.mozilla\\.firefox$",
                                             "^org\\.mozilla\\.nightly$",
@@ -641,13 +643,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -682,13 +684,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -738,7 +740,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^cz\\.or\\.repo\\.git-gui$",
                                             "^com\\.jetbrains\\."
@@ -746,13 +748,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -982,19 +984,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1047,19 +1049,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1102,19 +1104,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1167,19 +1169,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1222,19 +1224,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1287,19 +1289,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1347,19 +1349,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1386,13 +1388,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1440,19 +1442,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1480,13 +1482,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1535,19 +1537,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1574,13 +1576,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1628,19 +1630,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1667,13 +1669,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1721,19 +1723,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1786,19 +1788,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1846,19 +1848,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1916,19 +1918,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -1955,13 +1957,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2004,19 +2006,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2043,13 +2045,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2097,19 +2099,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2136,13 +2138,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2190,19 +2192,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2229,13 +2231,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2278,19 +2280,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2317,13 +2319,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2366,19 +2368,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2405,13 +2407,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2459,13 +2461,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2489,13 +2491,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2538,19 +2540,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2574,13 +2576,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2628,13 +2630,13 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2661,13 +2663,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2690,6 +2692,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.microsoft\\.VSCode",
                                             "^com\\.microsoft\\.rdc$",
                                             "^com\\.microsoft\\.rdc\\.",
                                             "^net\\.sf\\.cord$",
@@ -2715,19 +2718,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2780,19 +2783,19 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyperterm$",
                                             "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2816,13 +2819,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2855,13 +2858,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2899,13 +2902,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2933,13 +2936,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -2977,13 +2980,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3011,13 +3014,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3055,13 +3058,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3089,13 +3092,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3133,13 +3136,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3167,13 +3170,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3211,13 +3214,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3245,13 +3248,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3289,13 +3292,13 @@
                                         "type": "frontmost_application_if"
                                     },
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3341,13 +3344,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3371,13 +3374,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3401,13 +3404,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3431,13 +3434,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "vendor_id": 1452,
-                                                "product_id": 832
+                                                "product_id": 832,
+                                                "vendor_id": 1452
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -3685,7 +3688,78 @@
                     }
                 ]
             },
-            "devices": [],
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 16642,
+                        "vendor_id": 1578
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 41208,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                }
+            ],
             "fn_function_keys": [
                 {
                     "from": {
