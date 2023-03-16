@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -118,6 +120,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias alacrittyconfig="vim ~/.alacritty.yml"
 alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.vimrc"
 alias ssh='TERM=xterm-256color \ssh'
 alias tf="terraform"
 alias gr='cd $(git root)'
@@ -126,5 +129,4 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
-
-export PATH="$HOME/.poetry/bin:$PATH"
+eval "$(pyenv init -)"

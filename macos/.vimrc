@@ -26,9 +26,6 @@ filetype plugin indent on " required
 " Enable syntax highlighting
 syntax on
 
-" Enable mouse mode
-set mouse=a
-
 " Change cursor types
 let &t_SI.="\e[5 q" " SI = INSERT mode
 let &t_SR.="\e[3 q" " SR = REPLACE mode
