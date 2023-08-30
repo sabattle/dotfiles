@@ -792,10 +792,7 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 150
-                                },
-                                "to_if_held_down": [
+                                "to": [
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [

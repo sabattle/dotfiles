@@ -76,6 +76,7 @@ plugins=(
     docker
     docker-compose
     kubectl
+    poetry
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -109,6 +110,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*' # Fix slow pasting
 
 # Variables
 export KUBE_EDITOR="vim"
+export CGO_ENABLED=1
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -130,3 +132,4 @@ bindkey "^[[1;3D" backward-word
 bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
 eval "$(pyenv init -)"
+
