@@ -1,4 +1,5 @@
 alacritty
+zsh
 tmux
 tree
 btop

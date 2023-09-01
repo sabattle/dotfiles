@@ -1,4 +1,5 @@
 cask "alacritty"
+brew "zsh"
 brew "tmux"
 brew "tree"
 brew "btop"

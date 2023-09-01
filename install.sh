@@ -22,7 +22,7 @@ main() {
     echo "Beginning installation..."
 
     install_packages
-    install_zsh
+    set_default_shell
     install_oh_my_zsh
     install_zsh_plugins
     create_symlinks
@@ -41,15 +41,9 @@ install_packages() {
     fi
 }
 
-# Install Zsh
-install_zsh() {
-    if ! command -v zsh >/dev/null 2>&1; then
-       echo "Installing Zsh..."
-       sudo apt install zsh
-       chsh -s $(which zsh)
-   else
-       echo "Zsh already installed, skipping"
-   fi
+# Set Zsh as default shell
+set_default_shell() {
+    chsh -s $(which zsh)
 }
 
 # Install Oh My Zsh
