@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eou pipefail
+
 # Get absolute script path
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
@@ -19,6 +21,8 @@ main() {
     echo "Current OS: $OS"
     echo "Beginning installation..."
 
+    install_packages
+    install_zsh
     install_oh_my_zsh
     install_zsh_plugins
     create_symlinks
@@ -26,6 +30,26 @@ main() {
     install_vim_plugins
 
     echo "Done"
+}
+
+# Install Packages
+install_packages() {
+    if [[ "$OS" == "macos" ]]; then
+        brew bundle install --file=macos/Brewfile
+    else
+        xargs -a linux/packages.txt sudo apt install -y
+    fi
+}
+
+# Install Zsh
+install_zsh() {
+    if ! command -v zsh >/dev/null 2>&1; then
+       echo "Installing Zsh..."
+       sudo apt install zsh
+       chsh -s $(which zsh)
+   else
+       echo "Zsh already installed, skipping"
+   fi
 }
 
 # Install Oh My Zsh

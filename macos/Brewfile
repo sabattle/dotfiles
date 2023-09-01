@@ -1,0 +1,4 @@
+cask "alacritty"
+brew "tmux"
+brew "tree"
+brew "btop"

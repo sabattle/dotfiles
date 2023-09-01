@@ -44,7 +44,7 @@ let &t_EI.="\e[1 q" " EI = NORMAL mode (ELSE)
 " 6 -> solid vertical bar
 
 " Enable line numbers
-set number
+set relativenumber
 set ruler
 
 " Always show mode

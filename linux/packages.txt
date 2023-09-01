@@ -1,0 +1,4 @@
+alacritty
+tmux
+tree
+btop
