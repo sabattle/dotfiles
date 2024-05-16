@@ -30,16 +30,16 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*' # Fix slow pasting
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 # Aliases
-alias reload="source $XDG_CONFIG_HOME/zshrc/.zshrc"
-alias zshconfig="nvim $XDG_CONFIG_HOME/zshrc/.zshrc"
-alias ohmyzsh="nvim $XDG_DATA_HOME/oh-my-zsh"
-alias alacrittyconfig="nvim $XDG_CONFIG_HOME/alacritty/alacritty.yml"
-alias tmuxconfig="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias reload='source "$XDG_CONFIG_HOME"/zsh/.zshrc'
+alias zshconfig='nvim "$XDG_CONFIG_HOME"/zsh/.zshrc'
+alias ohmyzsh='nvim "$XDG_DATA_HOME"/oh-my-zsh'
+alias alacrittyconfig='nvim "$XDG_CONFIG_HOME"/alacritty/alacritty.yml'
+alias tmuxconfig='nvim "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias ssh='TERM=xterm-256color \ssh'
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
-alias open="xdg-open"
+alias vim='nvim'
+alias vi='nvim'
+alias v='vim'
+alias open='xdg-open'
 alias gr='cd $(git root)'
 alias gs='git status -s'
 
@@ -47,3 +47,5 @@ alias gs='git status -s'
 bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
 
+# Evals
+eval "$(mise activate zsh)"

@@ -3,7 +3,7 @@
 set -eou pipefail
 
 # Get absolute script path
-SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+DOTFILES_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Get OS
 if [[ "$(uname)" == "Linux" ]]; then
@@ -11,9 +11,6 @@ if [[ "$(uname)" == "Linux" ]]; then
 elif [[ "$(uname)" == "Darwin" ]]; then
     OS="macos"
 fi
-
-# Path to dotfiles
-DOTFILES_DIR=$SCRIPT_PATH/$OS
 
 # Main
 main() {
@@ -26,7 +23,7 @@ main() {
     mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME
 
     install_packages
-    set_default_shell
+    #set_default_shell
     install_oh_my_zsh
     install_zsh_plugins
     create_symlinks
