@@ -1,5 +1,8 @@
 alacritty
 zsh
 tmux
+neovim
+ripgrep
+fzf
 tree
 btop
