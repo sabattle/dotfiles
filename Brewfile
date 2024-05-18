@@ -1,7 +1,6 @@
 cask "alacritty"
 brew "zsh"
 brew "tmux"
-brew "neovim"
 brew "ripgrep"
 brew "fzf"
 brew "tree"

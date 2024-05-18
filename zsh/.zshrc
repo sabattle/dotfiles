@@ -1,13 +1,9 @@
 # Variables
 export ZSH=$XDG_DATA_HOME/oh-my-zsh
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
-# Zsh Config
+# Theme
 ZSH_THEME="gianu"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line) # Fix paste w/ autosuggest
-ZSH_HIGHLIGHT_STYLES[comment]=fg=248 # Fix comment color
-HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 # Plugins
 plugins=(
@@ -21,13 +17,23 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Options
+# Zsh Config
 setopt glob_dots null_glob
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line) # Fix paste w/ autosuggest
+ZSH_HIGHLIGHT_STYLES[comment]=fg=248 # Fix comment color
+HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':bracketed-paste-magic' active-widgets '.self-*' # Fix slow pasting
 
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+autoload -Uz compinit
+if [[ -n $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION(#qN.mh+24) ]]; then
+    compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+else
+    compinit -C
+fi
 
 # Aliases
 alias reload='source "$XDG_CONFIG_HOME"/zsh/.zshrc'
@@ -38,7 +44,7 @@ alias tmuxconfig='nvim "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias ssh='TERM=xterm-256color \ssh'
 alias vim='nvim'
 alias vi='nvim'
-alias v='vim'
+alias v='nvim'
 alias open='xdg-open'
 alias gr='cd $(git root)'
 alias gs='git status -s'

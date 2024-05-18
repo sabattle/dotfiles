@@ -1,4 +1,11 @@
 .DS_Store
+Brewfile.lock.json
+
+# Zsh
+.zcompdump*
+.zsh_history
+.zsh_sessions
 
 # Karabiner-Elements
-macos/karabiner/automatic_backups
+karabiner/automatic_backups
+
