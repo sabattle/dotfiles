@@ -53,5 +53,7 @@ alias gs='git status -s'
 bindkey -r "^S" history-incremental-search-forward
 bindkey "^F" history-incremental-search-forward
 
-# Evals
+# Tools
 eval "$(mise activate zsh)"
+source <(fzf --zsh)
+
