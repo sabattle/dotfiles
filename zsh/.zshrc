@@ -39,7 +39,7 @@ fi
 alias reload='source "$XDG_CONFIG_HOME"/zsh/.zshrc'
 alias zshconfig='nvim "$XDG_CONFIG_HOME"/zsh/.zshrc'
 alias ohmyzsh='nvim "$XDG_DATA_HOME"/oh-my-zsh'
-alias alacrittyconfig='nvim "$XDG_CONFIG_HOME"/alacritty/alacritty.yml'
+alias alacrittyconfig='nvim "$XDG_CONFIG_HOME"/alacritty/alacritty.toml'
 alias tmuxconfig='nvim "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias ssh='TERM=xterm-256color \ssh'
 alias vim='nvim'

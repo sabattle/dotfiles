@@ -70,6 +70,7 @@ program = "/bin/zsh"
 dynamic_padding = false
 dynamic_title = false
 opacity = 1.0
+option_as_alt = "Both"
 startup_mode = "Windowed"
 
 [window.dimensions]
