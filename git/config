@@ -25,10 +25,3 @@
   git = !git
 
   root = rev-parse --show-toplevel
-[user]
-	email = sebastian.battle@caci.com
-	name = Sebastian Battle
-[http "https://*.csde.caci.com"]
-	cookiefile = /home/battles@scop.athena.dev/.csde-cookies
-[credential]
-	helper = store
