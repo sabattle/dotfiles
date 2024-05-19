@@ -8,6 +8,8 @@ DOTFILES_DIR="$(
 	pwd -P
 )"
 
+echo "export DOTFILES_DIR=$DOTFILES_DIR" >>$DOTFILES_DIR/zsh/.zprofile
+
 # Get OS
 if [[ "$(uname)" == "Linux" ]]; then
 	OS="linux"
@@ -27,11 +29,9 @@ main() {
 
 	install_packages
 	set_default_shell
-	install_oh_my_zsh
-	install_zsh_plugins
-	install_mise
-	install_mise_plugins
+	install_antidote
 	create_symlinks
+	install_mise
 
 	echo "Done"
 
@@ -55,51 +55,14 @@ set_default_shell() {
 	fi
 }
 
-# Install Oh My Zsh
-install_oh_my_zsh() {
-	if [ ! -d $XDG_DATA_HOME/oh-my-zsh ]; then
-		echo "Installing Oh My Zsh..."
-		ZSH=$XDG_DATA_HOME/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# Install Antidote
+install_antidote() {
+	if [ ! -d $ZDOTDIR/.antidote ]; then
+		echo "Installing Antidote..."
+		git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 	else
-		echo "Oh My Zsh already installed, skipping"
+		echo "Antidote already installed, skipping"
 	fi
-}
-
-# Install Zsh plugins
-install_zsh_plugins() {
-	echo "Installing Zsh plugins..."
-
-	# zsh-syntax-highlighting
-	if [ ! -d $XDG_DATA_HOME/oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-			${ZSH_CUSTOM:-$XDG_DATA_HOME/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	else
-		echo "zsh-syntax-highlighting already installed, skipping"
-	fi
-
-	# zsh-autosuggestions
-	if [ ! -d $XDG_DATA_HOME/oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-		git clone https://github.com/zsh-users/zsh-autosuggestions \
-			${ZSH_CUSTOM:-$XDG_DATA_HOME/oh-my-zsh/custom}/plugins/zsh-autosuggestions
-	else
-		echo "zsh-autosuggestions already installed, skipping"
-	fi
-}
-
-# Install mise
-install_mise() {
-	if ! command -v mise &>/dev/null; then
-		echo "Installing mise..."
-		curl https://mise.run | sh
-	else
-		echo "mise already installed, skipping"
-	fi
-}
-
-# Install mise plugins
-install_mise_plugins() {
-	mise use --global vim -y
-	mise use --global neovim -y
 }
 
 # Symlink all dotfiles
@@ -116,6 +79,9 @@ create_symlinks() {
 	# tmux
 	rm -rf $XDG_CONFIG_HOME/tmux && ln -s $DOTFILES_DIR/tmux $XDG_CONFIG_HOME/tmux
 
+	# mise
+	rm -rf $XDG_CONFIG_HOME/mise && ln -s $DOTFILES_DIR/mise $XDG_CONFIG_HOME/mise
+
 	# vim
 	rm -rf $XDG_CONFIG_HOME/vim && ln -s $DOTFILES_DIR/vim $XDG_CONFIG_HOME/vim
 
@@ -129,6 +95,18 @@ create_symlinks() {
 	if [[ "$OS" == "macos" ]]; then
 		rm -rf $XDG_CONFIG_HOME/karabiner && ln -s $DOTFILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
 	fi
+}
+
+# Install mise
+install_mise() {
+	if ! command -v mise &>/dev/null; then
+		echo "Installing mise..."
+		curl https://mise.run | sh
+	else
+		echo "mise already installed, skipping"
+	fi
+
+	mise install -y
 }
 
 main

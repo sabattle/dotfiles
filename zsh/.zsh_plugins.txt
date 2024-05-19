@@ -1,0 +1,9 @@
+# theme
+romkatv/powerlevel10k kind:fpath
+
+# plugins
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zdharma-continuum/fast-syntax-highlighting
+jeffreytse/zsh-vi-mode

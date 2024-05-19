@@ -1,59 +1,56 @@
-# Variables
-export ZSH=$XDG_DATA_HOME/oh-my-zsh
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
-
-# Theme
-ZSH_THEME="gianu"
-
-# Plugins
-plugins=(
-    git
-    docker
-    docker-compose
-    kubectl
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# Zsh Config
-setopt glob_dots null_glob
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line) # Fix paste w/ autosuggest
-ZSH_HIGHLIGHT_STYLES[comment]=fg=248 # Fix comment color
-HISTFILE="$XDG_STATE_HOME"/zsh/history
-
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
-zstyle ':bracketed-paste-magic' active-widgets '.self-*' # Fix slow pasting
-
-autoload -Uz compinit
-if [[ -n $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION(#qN.mh+24) ]]; then
-    compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
-else
-    compinit -C
+# Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Variables
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+
+# Load Plugins
+source $ZDOTDIR/.antidote/antidote.zsh
+antidote load
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244" # fix autosuggestion color
+FAST_HIGHLIGHT_STYLES[comment]="fg=248" # fix comment color
+
+# Prompt
+autoload -Uz promptinit && promptinit && prompt powerlevel10k
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+
+export CLICOLOR=1
+export LS_COLORS='fi=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=04;01;34:st=34:tw=04;34:'
+LS_COLORS+='pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32'
+export LSCOLORS='ExGxDxDxCxDxDxFxFxexEx'
+export TREE_COLORS=${LS_COLORS//04;}
+
+# Completion
+source $ZDOTDIR/completion.zsh
+
+# Zsh Opts
+setopt GLOB_DOTS NULL_GLOB
+setopt EXTENDED_GLOB
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt INTERACTIVE_COMMENTS
+unsetopt BEEP
+
 # Aliases
-alias reload='source "$XDG_CONFIG_HOME"/zsh/.zshrc'
-alias zshconfig='nvim "$XDG_CONFIG_HOME"/zsh/.zshrc'
-alias ohmyzsh='nvim "$XDG_DATA_HOME"/oh-my-zsh'
-alias alacrittyconfig='nvim "$XDG_CONFIG_HOME"/alacritty/alacritty.toml'
-alias tmuxconfig='nvim "$XDG_CONFIG_HOME"/tmux/tmux.conf'
-alias ssh='TERM=xterm-256color \ssh'
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
-alias open='xdg-open'
-alias gr='cd $(git root)'
-alias gs='git status -s'
+source $ZDOTDIR/aliases.zsh
 
 # Keybinds
-bindkey -r "^S" history-incremental-search-forward
-bindkey "^F" history-incremental-search-forward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+bindkey -v '^?' backward-delete-char # fix insert mode backspace
 
 # Tools
 eval "$(mise activate zsh)"
 source <(fzf --zsh)
 
+zvm_after_init_commands+=('zvm_bindkey viins '^R' fzf-history-widget') # fix fzf history search keybind
+
+unset ZSH_AUTOSUGGEST_USE_ASYNC

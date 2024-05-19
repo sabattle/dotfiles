@@ -2,9 +2,12 @@
 Brewfile.lock.json
 
 # Zsh
+.antidote/
+.zprofile
 .zcompdump*
 .zsh_history
 .zsh_sessions
+.zsh_plugins.zsh
 
 # Karabiner-Elements
 karabiner/automatic_backups
