@@ -32,6 +32,7 @@ main() {
 	install_antidote
 	create_symlinks
 	install_mise
+	install_fonts
 
 	echo "Done"
 
@@ -107,6 +108,35 @@ install_mise() {
 	fi
 
 	mise install -y
+}
+
+# Download fonts
+download_fonts() {
+	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+}
+
+# Install fonts
+install_fonts() {
+	if [[ "$OS" == "macos" ]]; then
+		if ls ~/Library/Fonts/MesloLGS* 1>/dev/null 2>&1; then
+			echo "Fonts already installed, skipping..."
+		else
+			pushd ~/Library/Fonts
+			download_fonts
+			popd
+		fi
+	else
+		if ls ~/.local/share/fonts/MesloLGS* 1>/dev/null 2>&1; then
+			echo "Fonts already installed, skipping..."
+		else
+			mkdir -p ~/.local/share/fonts && pushd ~/.local/share/fonts
+			download_fonts
+			popd
+		fi
+	fi
 }
 
 main
