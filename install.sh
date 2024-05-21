@@ -120,6 +120,7 @@ install_mise() {
 		echo "mise already installed, skipping"
 	fi
 
+	eval "$(mise activate bash)"
 	mise install -y
 }
 

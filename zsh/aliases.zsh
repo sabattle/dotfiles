@@ -17,10 +17,10 @@ alias aliases='nvim $DOTFILES_DIR/zsh/aliases.zsh'
 # | General |
 # +---------+
 
-alias cd="z"
-alias ls="eza --color=always"
-alias ll="eza --color=always --long --git --icons=always"
-alias tree="eza --color=always --tree"
+alias cd='z'
+alias ls='eza --color=always'
+alias ll='eza --color=always --long --git --icons=always'
+alias tree='eza --color=always --tree'
 alias ssh='TERM=xterm-256color \ssh'
 
 # +--------+
@@ -41,6 +41,7 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gb='git branch'
 alias gc='git commit -m'
 alias gco='git checkout'
 alias gf='git fetch'
