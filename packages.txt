@@ -1,5 +1,9 @@
 zsh
 tmux
+zoxide
+eza
+bat
+git-delta
 ripgrep
 fzf
-tree
+tldr

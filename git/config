@@ -3,17 +3,13 @@
 [color]
   ui = auto
 
-[color "diff"]
-  meta = white bold
-  frag = cyan bold
-  old = red bold
-  new = green bold
-
 [core]
-  editor = vim
+  editor = nvim
+  pager = delta
 
 [alias]
   a = add
+  aa = add -A
   b = branch
   c = commit -m # Commit with message
   s = status -sb # Short status with current branch
@@ -25,3 +21,19 @@
   git = !git
 
   root = rev-parse --show-toplevel
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

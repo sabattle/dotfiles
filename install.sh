@@ -32,11 +32,14 @@ main() {
 	install_antidote
 	create_symlinks
 	install_mise
-	install_fonts
 
-	echo "Done"
+	bat cache --build # Update bat themes
 
-	exec "$SHELL" -l
+	echo -e "\nInstallation finished, please restart Alacritty"
+
+	read -n 1 -s -r -p "Press any key to exit"
+
+	kill -9 $PPID
 }
 
 # Install Packages
@@ -92,9 +95,19 @@ create_symlinks() {
 	# git
 	rm -rf $XDG_CONFIG_HOME/git && ln -s $DOTFILES_DIR/git $XDG_CONFIG_HOME/git
 
+	# bat
+	rm -rf $XDG_CONFIG_HOME/bat && ln -s $DOTFILES_DIR/bat $XDG_CONFIG_HOME/bat
+
 	# karabiner
 	if [[ "$OS" == "macos" ]]; then
 		rm -rf $XDG_CONFIG_HOME/karabiner && ln -s $DOTFILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
+	fi
+
+	# fonts
+	if [[ "$OS" == "macos" ]]; then
+		rm -f ~/Library/Fonts/MesloLGS* && cp $DOTFILES_DIR/fonts/* ~/Library/Fonts/
+	else
+		rm -f ~/.local/share/fonts/MesloLGS* && cp $DOTFILES_DIR/fonts/* ~/.local/share/fonts/
 	fi
 }
 
@@ -108,35 +121,6 @@ install_mise() {
 	fi
 
 	mise install -y
-}
-
-# Download fonts
-download_fonts() {
-	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-	wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-}
-
-# Install fonts
-install_fonts() {
-	if [[ "$OS" == "macos" ]]; then
-		if ls ~/Library/Fonts/MesloLGS* 1>/dev/null 2>&1; then
-			echo "Fonts already installed, skipping..."
-		else
-			pushd ~/Library/Fonts
-			download_fonts
-			popd
-		fi
-	else
-		if ls ~/.local/share/fonts/MesloLGS* 1>/dev/null 2>&1; then
-			echo "Fonts already installed, skipping..."
-		else
-			mkdir -p ~/.local/share/fonts && pushd ~/.local/share/fonts
-			download_fonts
-			popd
-		fi
-	fi
 }
 
 main

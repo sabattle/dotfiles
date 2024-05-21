@@ -64,9 +64,6 @@ zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 # Only display some tags for the command cd
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 
-# Required for completion to be in good groups
-zstyle ':completion:*' group-name ''
-
 zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
 
 # See ZSHCOMPWID "completion matching control"
