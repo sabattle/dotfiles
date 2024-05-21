@@ -12,8 +12,7 @@ export BAT_THEME=Kanagawa
 source $ZDOTDIR/.antidote/antidote.zsh
 antidote load
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244" # fix autosuggestion color
-FAST_HIGHLIGHT_STYLES[comment]="fg=248" # fix comment color
+FAST_HIGHLIGHT_STYLES[comment]="fg=244" # fix comment color
 
 # Prompt
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
@@ -53,6 +52,24 @@ bindkey -v '^?' backward-delete-char # fix insert mode backspace
 # Tools
 eval "$(mise activate zsh)"
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
+eval "${$(zoxide init zsh):s#_files -/#_cd#}"
+
+export FZF_DEFAULT_OPTS='--info=inline'
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
 
 unset ZSH_AUTOSUGGEST_USE_ASYNC
