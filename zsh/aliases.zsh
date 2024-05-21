@@ -17,6 +17,7 @@ alias aliases='nvim $DOTFILES_DIR/zsh/aliases.zsh'
 # | General |
 # +---------+
 
+alias l='eza --color=always'
 alias ls='eza --color=always'
 alias ll='eza --color=always --long --git --icons=always'
 alias la='eza --color=always --long --git --icons=always --all'
