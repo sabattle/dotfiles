@@ -2,10 +2,16 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   opts = function(_)
+    -- Override insert mode colors
+    local palette = require("kanagawa.colors").setup().palette
+    local kanagawa = require("lualine.themes.kanagawa")
+    kanagawa.insert.a.bg = palette.dragonGreen
+    kanagawa.insert.b.fg = palette.dragonGreen
+
     return {
       options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = kanagawa,
         globalstatus = true,
         disabled_filetypes = {
           statusline = {},

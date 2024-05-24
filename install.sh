@@ -105,9 +105,11 @@ create_symlinks() {
 
 	# fonts
 	if [[ "$OS" == "macos" ]]; then
-		rm -f ~/Library/Fonts/MesloLGS* && cp $DOTFILES_DIR/fonts/* ~/Library/Fonts/
+		mkdir -p ~/Library/Fonts
+		cp $DOTFILES_DIR/fonts/* ~/Library/Fonts/
 	else
-		rm -f ~/.local/share/fonts/MesloLGS* && cp $DOTFILES_DIR/fonts/* ~/.local/share/fonts/
+		mkdir -p ~/.local/share/fonts
+		cp $DOTFILES_DIR/fonts/* ~/.local/share/fonts/
 	fi
 }
 

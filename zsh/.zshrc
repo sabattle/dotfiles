@@ -6,7 +6,7 @@ fi
 # Variables
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 ZVM_INIT_MODE=sourcing
-export BAT_THEME=Kanagawa
+export BAT_THEME="Kanagawa Dragon"
 
 # Load Plugins
 source $ZDOTDIR/.antidote/antidote.zsh
@@ -50,6 +50,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey -v '^?' backward-delete-char # fix insert mode backspace
+bindkey -r '^s' # remove forward search
 
 # Tools
 eval "$(mise activate zsh)"

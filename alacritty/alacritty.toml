@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/kanagawa_wave.toml"]
+import = ["~/.config/alacritty/kanagawa_dragon.toml"]
 live_config_reload = true
 
 [cursor]
@@ -15,10 +15,10 @@ shape = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 15.5
+size = 18
 
 [font.normal]
-family = "MesloLGS NF"
+family = "CommitMono Nerd Font Mono"
 
 [font.offset]
 x = 0
@@ -70,7 +70,7 @@ save_to_clipboard = false
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [shell]
-args = ["-l", "-c", "tmux attach || tmux"]
+args = ["-l", "-c", "tmux new-session -A -s main"]
 program = "/bin/zsh"
 
 [window]
