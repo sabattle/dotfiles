@@ -39,6 +39,7 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_SAVE_NO_DUPS
 setopt INTERACTIVE_COMMENTS
 unsetopt BEEP
+unsetopt FLOW_CONTROL
 
 # Aliases
 source $ZDOTDIR/aliases.zsh
