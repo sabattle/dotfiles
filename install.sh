@@ -35,7 +35,7 @@ main() {
 
 	bat cache --build # Update bat themes
 
-	echo -e "\nInstallation finished, please restart Alacritty"
+	echo -e "\nInstallation finished, please launch Alacritty"
 
 	read -n 1 -s -r -p "Press any key to exit"
 

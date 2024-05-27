@@ -54,8 +54,8 @@ bindkey -r '^s' # remove forward search
 
 # Tools
 eval "$(mise activate zsh)"
-source <(fzf --zsh)
-eval "${$(zoxide init zsh):s#_files -/#_cd#}"
+source <(mise x -- fzf --zsh)
+eval "${$(mise x -- zoxide init zsh):s#_files -/#_cd#}"
 
 export FZF_DEFAULT_OPTS='--info=inline'
 export FZF_CTRL_T_OPTS="
