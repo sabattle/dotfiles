@@ -28,7 +28,6 @@ export TREE_COLORS=${LS_COLORS//04;}
 source $ZDOTDIR/completion.zsh
 
 # Zsh Opts
-setopt IGNORE_EOF # disable ctrl+d
 setopt AUTO_CD
 setopt GLOB_DOTS NULL_GLOB
 setopt EXTENDED_GLOB

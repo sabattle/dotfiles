@@ -49,4 +49,4 @@ alias gc='git commit -m'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gp='git push'
-
+alias gl='git log --oneline'
