@@ -122,11 +122,7 @@ install_mise() {
 		echo "mise already installed, skipping"
 	fi
 
-	if [[ "$SHELL" != *"zsh"* ]]; then
-		eval "$(~/.local/bin/mise activate bash)"
-	else
-		eval "$(~/.local/bin/mise activate zsh)"
-	fi
+	eval "$(~/.local/bin/mise activate bash)"
 
 	mise install -y
 }
