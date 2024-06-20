@@ -33,7 +33,7 @@ main() {
 	create_symlinks
 	install_mise
 
-	bat cache --build # Update bat themes
+	mise x -- bat cache --build # Update bat themes
 
 	echo -e "\nInstallation finished, please launch Alacritty"
 
@@ -122,7 +122,12 @@ install_mise() {
 		echo "mise already installed, skipping"
 	fi
 
-	eval "$(mise activate bash)"
+	if [[ "$SHELL" != *"zsh"* ]]; then
+		eval "$(~/.local/bin/mise activate bash)"
+	else
+		eval "$(~/.local/bin/mise activate zsh)"
+	fi
+
 	mise install -y
 }
 

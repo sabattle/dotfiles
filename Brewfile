@@ -1,4 +1,7 @@
 cask "alacritty"
+cask "firefox"
+cask "spotify"
+cask "karabiner-elements"
 brew "zsh"
 brew "tmux"
 brew "eza"
