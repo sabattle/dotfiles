@@ -50,3 +50,10 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gp='git push'
 alias gl='git log --oneline'
+
+# +-------+
+# | Tools |
+# +-------+
+
+alias k='kubectl'
+alias tf='terraform'

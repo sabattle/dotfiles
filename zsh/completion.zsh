@@ -15,13 +15,41 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect '^[' undo # escape
 bindkey -M menuselect '^[[Z' reverse-menu-complete # shift-tab
 
-# compinit
-autoload -Uz compinit
-for dump in $ZDOTDIR/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
+# +------+
+# | Init |
+# +------+
 
+fpath=("$XDG_CONFIG_HOME/zsh/completions" $fpath)
+
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit
+
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+rebuild_cache=false
+
+# List of files that trigger a rebuild if newer than .zcompdump
+config_files=(
+  $ZDOTDIR/.zshrc
+  $ZDOTDIR/completion.zsh
+  $DOTFILES_DIR/install.sh
+  $DOTFILES_DIR/mise/config.toml
+)
+
+for file in "${config_files[@]}"; do
+  if [[ -e $file && (! -e $zcompdump || $file -nt $zcompdump) ]]; then
+    rebuild_cache=true
+    break
+  fi
+done
+
+if $rebuild_cache; then
+  rm -rf $zcompdump
+  compinit
+else
+  compinit -C
+fi
+
+# Make completions work for dot-prefixed files (e.g. .env)
 _comp_options+=(globdots) # match . files
 
 # +---------+
@@ -71,3 +99,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
+# +------------------+
+# | Load Completions |
+# +------------------+
+
+complete -C aws_completer aws
+complete -o nospace -C $(which terraform) terraform

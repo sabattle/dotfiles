@@ -8,10 +8,7 @@ export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 ZVM_INIT_MODE=sourcing
 export BAT_THEME="Kanagawa Dragon"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
@@ -46,6 +43,7 @@ setopt AUTO_CD
 setopt GLOB_DOTS NULL_GLOB
 setopt EXTENDED_GLOB
 setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS

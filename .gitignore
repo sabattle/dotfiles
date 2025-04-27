@@ -5,9 +5,11 @@ Brewfile.lock.json
 .antidote/
 .zprofile
 .zcompdump*
+.zcompcache/
 .zsh_history
 .zsh_sessions
 .zsh_plugins.zsh
+zsh/completions
 
 # Tmux
 tmux/plugins/

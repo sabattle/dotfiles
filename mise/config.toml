@@ -1,10 +1,27 @@
 [tools]
+
+# Editors
 vim = "latest"
 neovim = "latest"
+
+# Terminal
+cosign = "latest"
 fzf = "latest"
 ripgrep = "latest"
 zoxide = "latest"
+eza = "latest"
 bat = "latest"
 delta = "latest"
+
+# Development
 node = "latest"
 python = "latest"
+uv = "latest"
+awscli = "latest"
+kubectl = "latest"
+kubeseal = "latest"
+helm = "latest"
+terraform = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ['python', 'node']
