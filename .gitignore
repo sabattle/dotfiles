@@ -11,9 +11,6 @@ Brewfile.lock.json
 .zsh_plugins.zsh
 zsh/completions
 
-# Tmux
-tmux/plugins/
-
 # Karabiner-Elements
 karabiner/automatic_backups
 
